@@ -1,8 +1,8 @@
 import pandas as pd
 import os
 
-input_file = "t_drive_1_to_10357_sorted.txt"
-output_folder = "taxi_log_2008_by_date"
+input_file = "t_drive_total_final.txt"
+output_folder = "taxi_log_2008_by_date_cleaned"
 
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
