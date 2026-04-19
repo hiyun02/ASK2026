@@ -16,7 +16,9 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-    implementation 'tech.tablesaw:tablesaw-core:0.43.1'
+    implementation 'org.apache.parquet:parquet-avro:1.14.4'
+    implementation 'org.apache.hadoop:hadoop-common:3.3.6'
+    implementation 'org.apache.hadoop:hadoop-mapreduce-client-core:3.3.6'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -29,4 +31,10 @@ bootJar {
 
 jar {
     enabled = false
+}
+
+configurations {
+    all {
+        exclude group: 'org.slf4j', module: 'slf4j-reload4j'
+    }
 }
